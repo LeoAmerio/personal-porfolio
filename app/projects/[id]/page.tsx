@@ -13,7 +13,7 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
   const searchParams = use(params as any) as { id: string };
   const project = projects.find((p) => p.id === searchParams.id) || projects[0];
   const { t } = useLanguage();
-
+  console.log(project)
   return (
     <div className="min-h-screen bg-black text-white p-6">
       <div className="fixed top-6 right-6 z-50">
@@ -87,6 +87,23 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
                   {t("view_repository")}
                 </Link>
               </Button>
+              {project.repoBackLink && (
+                <Button
+                  variant="outline"
+                  style={{ color: "black", margin: 2 }}
+                  className="inline-flex items-center"
+                  asChild
+                >
+                  <Link
+                    href={project.repoBackLink || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    {t("view_back_repository")}
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
         </div>

@@ -6,5 +6,6 @@ export interface Project {
   mainImage?: string
   screenshots?: string[]
   repoLink?: string
+  repoBackLink?: string
 }
 

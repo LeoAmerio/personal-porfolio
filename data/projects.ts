@@ -3,31 +3,33 @@ import type { Project } from "@/types/project"
 export const projects: Project[] = [
   {
     id: "1",
-    title: "E-commerce Platform",
-    image: "/placeholder.svg?height=400&width=400",
+    title: "E-commerce Platform for Notion Templates",
+    image: "/notion-project/notion-home.png",
     description:
       "A full-stack e-commerce platform with user authentication, product catalog, shopping cart, and payment integration. Built with Next.js, Node.js, and PostgreSQL.",
-    mainImage: "/placeholder.svg?height=600&width=800",
+    mainImage: "/notion-project/notion-home.png",
     screenshots: [
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
+      "/notion-project/template-detail.png",
+      "/notion-project/login.png",
+      "/notion-project/admin-dash.png",
     ],
-    repoLink: "https://github.com/username/ecommerce-platform",
+    repoLink: "https://github.com/LeoAmerio/marketplace",
+    repoBackLink: "https://github.com/LeoAmerio/marketplace-api"
   },
   {
     id: "2",
-    title: "Task Management App",
-    image: "/placeholder.svg?height=400&width=400",
+    title: "Finance Tracker App",
+    image: "/finanzapp-project/home-finan.png",
     description:
       "A collaborative task management application with real-time updates, task assignment, and progress tracking. Implemented using React, NestJS, and WebSockets.",
-    mainImage: "/placeholder.svg?height=600&width=800",
+    mainImage: "/finanzapp-project/home-finan.png",
     screenshots: [
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
+      "/finanzapp-project/gastos.png",
+      "/finanzapp-project/international.png",
+      "/finanzapp-project/merval.png",
+      "/finanzapp-project/investments.png",
     ],
-    repoLink: "https://github.com/username/task-management",
+    repoLink: "https://github.com/LeoAmerio/finanzapp",
   },
   {
     id: "3",
