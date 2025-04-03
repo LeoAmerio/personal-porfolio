@@ -13,7 +13,8 @@ import { LanguageSwitcher } from "@/components/language-switcher"
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-black text-white p-6">
+    // <div className="min-h-screen bg-black text-white p-6">
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
       <div className="fixed top-6 right-6 z-50">
         <LanguageSwitcher />
       </div>
@@ -23,12 +24,6 @@ export default function Portfolio() {
 
         {/* Right Content */}
         <div className="space-y-8">
-          {/* Menu Button - Only show on mobile */}
-          <div className="flex justify-end lg:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="w-6 h-6" />
-            </Button>
-          </div>
 
           {/* Projects Section */}
           <ProjectsSection projects={projects} />
@@ -37,10 +32,16 @@ export default function Portfolio() {
           <StackSection techStack={techStack} />
 
           {/* Certificates and Experience Sections */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <CertificatesCard />
-            <ExperienceCard />
-          </div>
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
+          <section className="px-6 py-16 bg-black bg-opacity-40">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <CertificatesCard />
+                <ExperienceCard />
+              </div>
+            </div>
+          </section>
+          {/* </div> */}
         </div>
       </div>
     </div>

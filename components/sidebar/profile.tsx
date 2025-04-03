@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function Profile() {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 m-2 ml-2 mt-1">
       <Image src="/109082282.jpeg" alt="Profile" width={60} height={60} className="rounded-full" />
       <div>
         <h1 className="text-2xl font-mono">Leonardo Amerio</h1>
