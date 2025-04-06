@@ -30,6 +30,10 @@ const translations = {
     en: "View Repository",
     es: "Ver Repositorio",
   },
+  view_live: {
+    en: "View Live",
+    es: "Ver en Vivo",
+  },
   view_back_repository: {
     en: "View Backend Repository",
     es: "Ver Repositorio Backend",

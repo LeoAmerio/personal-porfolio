@@ -2,34 +2,36 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Github, Maximize2 } from "lucide-react";
+import { ArrowLeft, Github, Maximize2, LineChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/data/projects";
 import { useLanguage } from "@/context/language-context";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { use, useState } from "react";
-import { ImageLightbox } from "@/components/lightbox/image-lightbox"
+import { ImageLightbox } from "@/components/lightbox/image-lightbox";
 
 export default function ProjectDetail({ params }: { params: { id: string } }) {
   const searchParams = use(params as any) as { id: string };
   const project = projects.find((p) => p.id === searchParams.id) || projects[0];
   const { t } = useLanguage();
-  console.log(project)
+  console.log(project);
 
-  const [lightboxOpen, setLightboxOpen] = useState(false)
-  const [lightboxIndex, setLightboxIndex] = useState(0)
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   // Combine main image and screenshots for the lightbox
-  const allImages = [project.mainImage || "/placeholder.svg", ...(project.screenshots || [])]
+  const allImages = [
+    project.mainImage || "/placeholder.svg",
+    ...(project.screenshots || []),
+  ];
 
   // Open lightbox with specific image
   const openLightbox = (index: number) => {
-    setLightboxIndex(index)
-    setLightboxOpen(true)
-  }
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
-
     <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
       {/* Header with language switcher */}
       <header className="fixed top-0 w-full bg-black bg-opacity-80 backdrop-blur-sm z-50 px-6 py-4">
@@ -44,7 +46,10 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
       <main className="pt-20 pb-16 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Back button */}
-          <Link href="/" className="inline-flex items-center text-gray-400 hover:text-white mb-8">
+          <Link
+            href="/"
+            className="inline-flex items-center text-gray-400 hover:text-white mb-8"
+          >
             <ArrowLeft className="mr-2 h-4 w-4" />
             {t("back_to_portfolio")}
           </Link>
@@ -101,12 +106,18 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
                 </div>
 
                 <div>
-                  <h2 className="text-lg text-gray-400 mb-2">{t("description")}</h2>
-                  <p className="text-gray-300 leading-relaxed">{project.description}</p>
+                  <h2 className="text-lg text-gray-400 mb-2">
+                    {t("description")}
+                  </h2>
+                  <p className="text-gray-300 leading-relaxed">
+                    {project.description}
+                  </p>
                 </div>
 
                 <div>
-                  <h2 className="text-lg text-gray-400 mb-2">{t("repo_link")}</h2>
+                  <h2 className="text-lg text-gray-400 mb-2">
+                    {t("repo_link")}
+                  </h2>
                   <Button
                     variant="outline"
                     style={{ color: "black" }}
@@ -139,6 +150,23 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
                       </Link>
                     </Button>
                   )}
+                  {project.linkPage && (
+                    <Button
+                      variant="outline"
+                      style={{ color: "black", margin: 2 }}
+                      className="inline-flex items-center"
+                      asChild
+                    >
+                      <Link
+                        href={project.linkPage || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <LineChart />
+                        {t("view_live")}
+                      </Link>
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>
@@ -148,7 +176,11 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
 
       {/* Lightbox */}
       {lightboxOpen && (
-        <ImageLightbox images={allImages} initialIndex={lightboxIndex} onClose={() => setLightboxOpen(false)} />
+        <ImageLightbox
+          images={allImages}
+          initialIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+        />
       )}
     </div>
   );
