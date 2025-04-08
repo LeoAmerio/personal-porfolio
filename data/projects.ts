@@ -33,17 +33,20 @@ export const projects: Project[] = [
   },
   {
     id: "3",
-    title: "Analytics Dashboard",
-    image: "/placeholder.svg?height=400&width=400",
+    title: "Housinger",
+    image: "/housinger/housi-landing.png",
     description:
       "A data visualization dashboard for business analytics with interactive charts, filters, and exportable reports. Built with Next.js, D3.js, and AWS services.",
-    mainImage: "/placeholder.svg?height=600&width=800",
+    mainImage: "/housinger/housi-landing.png",
     screenshots: [
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
-      "/placeholder.svg?height=200&width=300",
+      "/housinger/housi-home.png",
+      "/housinger/housi-services.png",
+      "/housinger/housi-events.png",
+      "/housinger/housin-msg.png",
+      "/housinger/housi-msg-2.png",
     ],
-    repoLink: "https://github.com/username/analytics-dashboard",
+    repoLink: "https://github.com/LeoAmerio/IW-Front",
+    linkPage: "https://iw-front.vercel.app/"
   },
 ]
 

@@ -30,6 +30,10 @@ const translations = {
     en: "View Repository",
     es: "Ver Repositorio",
   },
+  view_live: {
+    en: "View Live",
+    es: "Ver en Vivo",
+  },
   view_back_repository: {
     en: "View Backend Repository",
     es: "Ver Repositorio Backend",
@@ -83,6 +87,14 @@ const translations = {
   professional_journey: {
     en: "My professional journey and work history",
     es: "Mi trayectoria profesional e historial laboral",
+  },
+  view_all: {
+    en: 'View All',
+    es: 'Ver Más'
+  },
+  view_project: {
+    en: 'View Project',
+    es: 'Ver Proyecto'
   },
 
   // Project details
