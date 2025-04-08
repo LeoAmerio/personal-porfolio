@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { CardLink } from "./card-link"
-import { useLanguage } from "@/context/language-context"
-import Link from "next/link"
-import { ExternalLink } from "lucide-react"
+import Image from "next/image";
+import { CardLink } from "./card-link";
+import { useLanguage } from "@/context/language-context";
+import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 
 export function ExperienceCard() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   return (
     // <CardLink href="/experiences" title={t("experience")} description={t("professional_journey")}>
@@ -51,6 +51,5 @@ export function ExperienceCard() {
         </div>
       </div>
     </Link>
-  )
+  );
 }
-

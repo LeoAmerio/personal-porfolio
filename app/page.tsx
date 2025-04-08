@@ -1,5 +1,6 @@
 "use client"
 import React from 'react'
+import Image from 'next/image'
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sidebar } from "@/components/sidebar/sidebar"
@@ -10,8 +11,11 @@ import { ExperienceCard } from "@/components/card-link/experience-card"
 import { projects } from "@/data/projects"
 import { techStack } from "@/data/tech-stack"
 import { LanguageSwitcher } from "@/components/language-switcher"
+import { useLanguage } from '@/context/language-context'
 
 export default function Portfolio() {
+  const { t } = useLanguage()
+
   return (
     // <div className="min-h-screen bg-black text-white p-6">
     <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
